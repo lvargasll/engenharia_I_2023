@@ -1,0 +1,11 @@
+@startuml
+
+    left to right direction
+
+package Universidade {
+    actor Professor as p
+    actor Aluno as a
+    actor Cordenador as c
+}
+
+@enduml

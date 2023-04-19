@@ -1,0 +1,31 @@
+@startuml
+
+left to right direction
+actor Cliente as c 
+
+package Função {
+    actor Garçom as ga
+    actor Cozinheiro as co
+    actor Atendente as at 
+    actor Caixa as ca
+    actor Chefe as ch
+    actor "Supervisor de Alimentos" as sa 
+}
+
+
+package Restaurante {
+    usecase "Comer comida" as UC1
+    usecase "Pagar" as UC2
+    usecase "Beber" as UC3
+    usecase "Analisar Alimento" as UC4
+    (UC1) .> (UC2) : include
+    (UC3) .> (UC3) : <<extends>>
+}
+
+sa -- UC4
+c -- UC1
+c -- UC2
+c -- UC3
+sa <|-- ch
+
+@enduml
