@@ -1,0 +1,50 @@
+@startuml
+
+    left to right direction
+
+package escola{
+
+    actor Faxineiro as fa
+    actor Vigilante as vi 
+    actor Funcionario as fun
+    actor Aluno as al
+    actor Reitor as re
+    actor Professor as pr
+    actor Cordenador as coo
+    actor Financeiro as fi 
+
+    usecase "Orientar Matricula" as ac3
+    usecase "Administrar Curso" as ac4
+    usecase "Administrar Universidade" as ac5
+    usecase "Ministar Aula" as ac1
+    usecase "Representar Universidade" as ac6
+    usecase "Gerenciar Receitas e Despesas" as ac10
+    usecase "Atender Universidade" as op1
+    usecase "Prestar Serviço" as ac9
+    usecase "Receber" as ac2
+    usecase "Assistir aula" as ac7
+    usecase "Pagar" as uc8
+    
+}
+
+pr -- ac1
+pr -- ac2
+ac2 --|> ac10
+coo -- ac3
+coo -- ac4
+re -- ac5
+re -- ac6
+al -- ac7
+al -- uc8
+vi -- op1
+re --|> pr
+coo --|> pr
+(ac7) .> (ac1) : <<inclui>>
+ac10 -- fi
+op1 --|> ac9
+fun -- ac9
+fa --|> fun
+vi --|> fun 
+fun -- ac2 
+
+@enduml
