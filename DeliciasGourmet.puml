@@ -1,0 +1,27 @@
+@startuml 
+    
+left to right direction
+package funcionario{
+actor SupervisoraDeEstoque as se
+actor Coordenadordecompras as gc
+actor CordenadorDeProdução as cp
+actor AnalistaDeQualidade as aq
+actor Vendedor as vd
+
+package DeliciasGourmet {
+    gc --> (Adquirir materias necessários)
+    gc --> (Garantir a qualidade dos produtos)
+    vd --> (Distribui os produtos)
+    vd --> (Demanda do mercado)
+    se --> (gerenciar o armazenamento dos materiais)
+    se --> (Verificar se está tudo em conformidade com os pedidos)
+    cp --> (coordena a utilização dos ingredientes materiais no processo de fabricação)
+    se --> (Entrega e Quantidade certa)
+    cp --> (Entrega e Quantidade certa)
+    cp --> (otimizar a utilização dos materiais)
+    aq --> (monitora o processo de produção)
+    aq --> (garantir que a produção esteja em conformidade com as normas de segurança alimentar)
+ 
+}
+
+@enduml
